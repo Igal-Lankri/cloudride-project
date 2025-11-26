@@ -1,6 +1,6 @@
 # Cloudride Challenge - Igal Lankri
 
-Hi Shuki Danit and Segev! This is my submission for the technical home assignment.
+Hi Shuki, Danit and Segev! This is my submission for the technical home assignment.
 I've built a fully automated, containerized environment on AWS using Terraform and GitHub Actions.
 
 ## 🛠 What's in the box?

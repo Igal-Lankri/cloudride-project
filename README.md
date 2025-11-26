@@ -3,7 +3,7 @@
 Hi Shuki, Danit and Segev! This is my submission for the technical home assignment.
 I've built a fully automated, containerized environment on AWS using Terraform and GitHub Actions.
 
-## 🛠 What's in the box?
+## What's in the box?
 
 * **Infrastructure:** Terraform (managing VPC, ECS, ALB, ECR, etc.)
 * **App:** A simple Nginx container serving a custom HTML page.
@@ -11,15 +11,16 @@ I've built a fully automated, containerized environment on AWS using Terraform a
 
 ---
 
-## 🏗 The Architecture
+## The Architecture
 
-I designed the system to be secure by default but simple to manage.
-* **Public Zone:** The Application Load Balancer (ALB) and NAT Gateway sit here to handle internet traffic.
-* **Private Zone:** The application itself (ECS Fargate Tasks) runs here. It's completely isolated from the internet for security.
+I designed the network topology to strictly follow the challenge requirements regarding isolation and access:
+
+* **Inbound Access:** As requested, the application is exposed to the internet only via the Application Load Balancer (ALB) in the Public Zone.
+* **Outbound Access:** The containers are in a private network. They can reach the internet using the NAT Gateway, but they are completely hidden from direct outside connections.
 
 ---
 
-## ▶️ How to run it
+## How to run it
 
 1.  **Build the Infrastructure:**
     ```bash
